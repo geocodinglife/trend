@@ -20,7 +20,8 @@ end
 group :development do
   gem 'awesome_print'
   gem 'listen', '~> 3.2'
-  gem 'pry'
+  gem 'pry-rails'
+  gem 'watir'
   gem 'rubocop-rails', '~> 2.8', '>= 2.8.1', require: false
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
