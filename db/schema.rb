@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_03_013913) do
+ActiveRecord::Schema.define(version: 2021_02_08_021127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,4 +30,20 @@ ActiveRecord::Schema.define(version: 2021_02_03_013913) do
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
   end
 
+  create_table "links", force: :cascade do |t|
+    t.string "url"
+    t.text "text"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "page_ranks", force: :cascade do |t|
+    t.integer "rank"
+    t.bigint "link_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["link_id"], name: "index_page_ranks_on_link_id"
+  end
+
+  add_foreign_key "page_ranks", "links"
 end
