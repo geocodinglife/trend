@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Rank:</strong>
+  <%= @page_rank.rank %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @page_rank.link_id %>
+</p>
+
+<%= link_to 'Edit', edit_page_rank_path(@page_rank) %> |
+<%= link_to 'Back', page_ranks_path %>
