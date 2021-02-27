@@ -12,16 +12,16 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 gem 'sass-rails', '>= 6'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 4.0'
+gem 'selenium-webdriver'
+gem 'webdrivers'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
-  gem 'awesome_print'
+  gem 'amazing_print'
   gem 'listen', '~> 3.2'
-  gem 'pry-rails'
-  gem 'watir'
   gem 'rubocop-rails', '~> 2.8', '>= 2.8.1', require: false
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
