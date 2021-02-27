@@ -1,5 +1,5 @@
 class PageRanksController < ApplicationController
-  before_action :set_page_rank, only: %i[ show edit update destroy ]
+  before_action :set_page_rank, only: %i[show edit update destroy]
 
   # GET /page_ranks or /page_ranks.json
   def index
@@ -7,8 +7,7 @@ class PageRanksController < ApplicationController
   end
 
   # GET /page_ranks/1 or /page_ranks/1.json
-  def show
-  end
+  def show; end
 
   # GET /page_ranks/new
   def new
@@ -16,8 +15,7 @@ class PageRanksController < ApplicationController
   end
 
   # GET /page_ranks/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /page_ranks or /page_ranks.json
   def create
@@ -25,7 +23,7 @@ class PageRanksController < ApplicationController
 
     respond_to do |format|
       if @page_rank.save
-        format.html { redirect_to @page_rank, notice: "Page rank was successfully created." }
+        format.html { redirect_to @page_rank, notice: 'Page rank was successfully created.' }
         format.json { render :show, status: :created, location: @page_rank }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +36,7 @@ class PageRanksController < ApplicationController
   def update
     respond_to do |format|
       if @page_rank.update(page_rank_params)
-        format.html { redirect_to @page_rank, notice: "Page rank was successfully updated." }
+        format.html { redirect_to @page_rank, notice: 'Page rank was successfully updated.' }
         format.json { render :show, status: :ok, location: @page_rank }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,19 +49,20 @@ class PageRanksController < ApplicationController
   def destroy
     @page_rank.destroy
     respond_to do |format|
-      format.html { redirect_to page_ranks_url, notice: "Page rank was successfully destroyed." }
+      format.html { redirect_to page_ranks_url, notice: 'Page rank was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_page_rank
-      @page_rank = PageRank.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def page_rank_params
-      params.require(:page_rank).permit(:rank, :link_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_page_rank
+    @page_rank = PageRank.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def page_rank_params
+    params.require(:page_rank).permit(:rank, :link_id)
+  end
 end

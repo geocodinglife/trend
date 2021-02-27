@@ -12,8 +12,6 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 gem 'sass-rails', '>= 6'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 4.0'
-gem 'selenium-webdriver'
-gem 'webdrivers'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -35,7 +33,9 @@ group :test do
 end
 
 group :production do
+  gem 'selenium-webdriver'
   gem 'pg', '>= 0.18', '< 2.0'
+  gem 'webdrivers'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

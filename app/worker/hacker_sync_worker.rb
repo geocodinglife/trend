@@ -5,10 +5,9 @@ class HackerSyncWorker
   number = 0
 
   1.upto(10) do |number|
-
     sleep(2)
     number + 1
-    
+
     driver.get "https://news.ycombinator.com/news?p=#{number}"
     doc = Nokogiri::HTML.parse(driver.page_source)
     links = doc.css('a.storylink').map { |link| link }
@@ -24,6 +23,6 @@ class HackerSyncWorker
     end
   end
 
-  Rails.logger.info("---saved Page Rank---")
+  Rails.logger.info('---saved Page Rank---')
   driver.quit
 end
